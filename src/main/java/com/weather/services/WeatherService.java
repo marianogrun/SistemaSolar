@@ -2,11 +2,8 @@ package com.weather.services;
 
 import com.weather.entities.*;
 import com.weather.repositories.*;
-import com.weather.services.model.WeatherValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.weather.web.ForbiddenException;
 
 import java.util.List;
 
@@ -32,25 +29,10 @@ public class WeatherService {
         int numBetasoideRel= 360;
         int numVulcanosAntiRel= 0;
 
-        String [] anio= new String[365];
+        String [] anio= new String[360];
 
-        String temCalor="calor";
-        String temLluvia= "lluvia";
-        String temFrio="frio";
-        String temSequia="sequia";
-        String respuestaSalida;
         int periodosSequia=0;
         int periodoObtenido=10;
-
-        /*
-         * para consultar un numero especifico dentro de la base de 360 dias
-         *
-         *  numeroIngresado = num;
-         *
-         *  numParteEntera = numeroIngresado/360; // me quedo solo con la parte entera
-         *  numADescontar = numParteEntera * 360;
-         *  numAConsultar = numIngresado - numADescontar;
-         * */
 
 
         for (int j = 0; j < anio.length; j++) {
@@ -116,18 +98,12 @@ public class WeatherService {
 //            System.out.println("" + anio[i] + " " + i);
 //        }
         System.out.println("Los periodos de sequia en 10 años fueron:"+periodosSequia);
-        System.out.println("Ingresaaaaa");
     }
 
-    public Weather weather(Integer dayNumber){
-        System.out.println("Ingresaaaaa");
-        Weather weather=weatherRepository.findByDay(dayNumber);
+    public Weather getBaseWeather(Integer day){
+        List<Weather> weatherCandidates=weatherRepository.findByDay(day%360);
 
-        return weather;
-    }
-
-    public void start1() {
-        System.out.println("Holaaaaa");
+        return weatherCandidates.isEmpty()?null : weatherCandidates.get(0);
     }
 
     public void deleteAll() {

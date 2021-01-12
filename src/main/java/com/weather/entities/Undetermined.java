@@ -6,11 +6,11 @@ import javax.persistence.*;
 @DiscriminatorValue("UNDETERMINED")
 public class Undetermined extends Weather {
 
-    public Undetermined () {
+    private Undetermined(){
 
     }
 
-    public Undetermined (Integer dayNumber) {
-        this.dayNumber= dayNumber;
+    public Undetermined (int day) {
+        this.day= day;
     }
 }

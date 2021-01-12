@@ -3,14 +3,14 @@ package com.weather.entities;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("OPTIMALCONDITIONS")
+@DiscriminatorValue("OPTIMAL_CONDITIONS")
 public class OptimalConditions extends Weather {
 
-    public OptimalConditions () {
+    private OptimalConditions(){
 
     }
 
-    public OptimalConditions (Integer dayNumber) {
-        this.dayNumber= dayNumber;
+    public OptimalConditions (int day) {
+        this.day= day;
     }
 }

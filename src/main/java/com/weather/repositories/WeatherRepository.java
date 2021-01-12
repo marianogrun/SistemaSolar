@@ -12,12 +12,9 @@ import com.weather.entities.Weather;
 import java.util.List;
 
 @Repository
-public interface WeatherRepository extends PagingAndSortingRepository<Weather, Long> {
-		
-//	boolean existsByDay (Integer dayNumber);
-    List<Weather> findByDayNumber(Integer dayNumber);
+public interface WeatherRepository extends CrudRepository<Weather, Long> {
 
-    public Weather findByDay(int day);
+    public List<Weather> findByDay(Integer day);
 
 //    @Query(value = "select * from weather where day_number= dayNumber", nativeQuery = true)
 //    public List<Weather> findWeatherByDayNumber(@Param("day_Number") Integer dayNumber);

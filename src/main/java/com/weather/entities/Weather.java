@@ -1,5 +1,7 @@
 package com.weather.entities;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+
 import javax.persistence.*;
 
 
@@ -7,11 +9,13 @@ import javax.persistence.*;
 @Table (name="weather")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
-public class Weather {
+public abstract class Weather {
 	
 
-	protected Long id; 
-	protected Integer dayNumber;
+	protected Long id;
+	protected Integer day;
+
+	protected String type;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY )
@@ -21,14 +25,24 @@ public class Weather {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	@Column
-	public Integer getDayNumber() {
-		return dayNumber;
+
+	@Column (insertable = false, updatable = false)
+	public String getType(){
+		return type;
 	}
-	public void setDayNumber(Integer dayNumber) {
-		this.dayNumber = dayNumber;
+
+	public Integer getDay() {
+		return day;
 	}
+
+	public void setDay(Integer day) {
+		this.day = day;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	
 	
 	

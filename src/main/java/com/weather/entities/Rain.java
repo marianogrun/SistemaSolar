@@ -6,12 +6,12 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("RAIN")
 public class Rain extends Weather {
-	
-	public Rain() {
-		
+
+	private Rain(){
+
 	}
-	
-	public Rain(Integer dayNumber) {
-		this.dayNumber= dayNumber;
+
+	public Rain(Integer day) {
+		this.day= day;
 	}
 }

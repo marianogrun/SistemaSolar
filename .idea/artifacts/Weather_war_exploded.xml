@@ -76,6 +76,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: com.h2database:h2:1.4.200" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

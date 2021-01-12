@@ -3,14 +3,14 @@ package com.weather.entities;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("INTENSITYPEAK")
+@DiscriminatorValue("INTENSITY_PEAK")
 public class IntensityPeak extends Weather{
 
-    public IntensityPeak () {
+
+    private IntensityPeak(){
 
     }
-
-    public IntensityPeak (Integer dayNumber) {
-        this.dayNumber= dayNumber;
+    public IntensityPeak (Integer day) {
+        this.day= day;
     }
 }
