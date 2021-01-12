@@ -1,8 +1,11 @@
 package com.weather.web;
 
+import com.weather.entities.Weather;
+import com.weather.repositories.WeatherRepository;
 import com.weather.services.model.WeatherValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +15,9 @@ import com.weather.services.WeatherService;
 public class WeatherController {
 	
 	@Autowired
-	private WeatherService weatherService;
+    private WeatherService weatherService;
+    @Autowired
+    private WeatherRepository weatherRepository;
 //    @PostMapping("/mutant")
 //    public Boolean create(@RequestBody Weather proposedMutant) throws ForbiddenException {
 //    	Boolean isMutant = weatherService.saveAsMutant(proposedMutant);
@@ -42,10 +47,11 @@ public class WeatherController {
     }
 
     @GetMapping("/weather")
-    public WeatherValue weather(@RequestParam("type") String type) {
-
-        return weatherService.weather();
+    public Weather weather(@RequestParam (value="dayNumber") Integer dayNumber) {
+        return weatherService.weather(dayNumber);
     }
+
+
 
     @GetMapping("/reboot")
     public void reboot() {

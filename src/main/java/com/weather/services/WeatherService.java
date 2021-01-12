@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.weather.web.ForbiddenException;
 
+import java.util.List;
+
 @Service
 public class WeatherService {
 	
@@ -114,12 +116,18 @@ public class WeatherService {
 //            System.out.println("" + anio[i] + " " + i);
 //        }
         System.out.println("Los periodos de sequia en 10 años fueron:"+periodosSequia);
+        System.out.println("Ingresaaaaa");
     }
 
-    public WeatherValue weather(Integer dayNumber){
+    public Weather weather(Integer dayNumber){
+        System.out.println("Ingresaaaaa");
+        Weather weather=weatherRepository.findByDay(dayNumber);
 
-        String weatherType=weatherRepository.findByDayNumber(dayNumber);
-        return new WeatherValue();
+        return weather;
+    }
+
+    public void start1() {
+        System.out.println("Holaaaaa");
     }
 
     public void deleteAll() {
