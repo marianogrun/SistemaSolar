@@ -13,9 +13,9 @@ public class DataSourceConfig {
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/weather?serverTimezone=UTC"); //URL de base / puerto / nombre de la base
-        dataSourceBuilder.username("root");
-        dataSourceBuilder.password("");
+        dataSourceBuilder.url("jdbc:mysql://us-cdbr-east-02.cleardb.com:3306/heroku_27e1c07a6c4ccb7?serverTimezone=UTC"); //URL de base / puerto / nombre de la base
+        dataSourceBuilder.username("bb9b49d61801ad");
+        dataSourceBuilder.password("1ab71e5e");
         return dataSourceBuilder.build();
     }
 
