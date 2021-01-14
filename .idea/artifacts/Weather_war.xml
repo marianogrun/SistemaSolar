@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Weather-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="Weather-1.0.0.war">
       <element id="artifact" artifact-name="Weather:war exploded" />
     </root>
   </artifact>

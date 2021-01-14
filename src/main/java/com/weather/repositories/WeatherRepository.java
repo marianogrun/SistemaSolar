@@ -16,6 +16,8 @@ public interface WeatherRepository extends CrudRepository<Weather, Long> {
 
     public List<Weather> findByDay(Integer day);
 
+    public List<Weather> findByType(String type);
+
 //    @Query(value = "select * from weather where day_number= dayNumber", nativeQuery = true)
 //    public List<Weather> findWeatherByDayNumber(@Param("day_Number") Integer dayNumber);
 }
