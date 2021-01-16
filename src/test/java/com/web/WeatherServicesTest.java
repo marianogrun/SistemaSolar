@@ -3,6 +3,9 @@ package com.web;
 
 import com.weather.config.WeatherApplication;
 import com.weather.entities.Drought;
+import com.weather.entities.OptimalConditions;
+import com.weather.entities.Rain;
+import com.weather.entities.Weather;
 import com.weather.repositories.DroughtRepository;
 import com.weather.repositories.WeatherRepository;
 import com.weather.services.WeatherService;
@@ -35,14 +38,24 @@ public class WeatherServicesTest {
         assertEquals("Drought",weatherRepository.findByDay(0).get(0).getType());
     }
 
-//    @Test
-//    public void testCreateWeatherFindByType(){
-//        Drought drought=new Drought(0);
-//
-//        drought.setType("Drought");
-//        weatherRepository.save(drought);
-//        int num=0;
-//
-//        assertEquals(Long.valueOf(num),weatherRepository("Drought").get(0).getDay());
-//    }
+    @Test
+    public void testCreateWeatherFindByType(){
+        OptimalConditions optimalConditions=new OptimalConditions(17);
+        Rain rain=new Rain(25);
+
+        optimalConditions.setType("OPTIMAL_CONDITIONS");
+        weatherRepository.save(optimalConditions);
+        Long num1=17L, num2=25L;
+        rain.setType("RAIN");
+        weatherRepository.save(rain);
+        Weather weatherOp=weatherRepository.findByType("OPTIMAL_CONDITIONS").get(0);
+        Weather weatherRain=weatherRepository.findByType("RAIN").get(0);
+
+
+        assertEquals(Long.valueOf(num1),Long.valueOf(weatherOp.getDay()));
+        assertEquals("OPTIMAL_CONDITIONS",weatherOp.getType());
+        assertEquals(Long.valueOf(num2),Long.valueOf(weatherRain.getDay()));
+        assertEquals("RAIN",weatherRain.getType());
+    }
+
 }

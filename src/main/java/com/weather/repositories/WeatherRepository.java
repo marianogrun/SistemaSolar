@@ -12,7 +12,7 @@ import com.weather.entities.Weather;
 import java.util.List;
 
 @Repository
-public interface WeatherRepository extends CrudRepository<Weather, Long> {
+public interface WeatherRepository extends PagingAndSortingRepository<Weather, Long> {
 
     public List<Weather> findByDay(Integer day);
 
