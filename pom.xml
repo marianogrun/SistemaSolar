@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.web</groupId>
-    <artifactId>cosmicweather</artifactId>
+    <artifactId>Weather</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
     <name>Weather</name>
@@ -154,7 +154,7 @@
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
                         <!-- You might have to remove the ./ in front   -->
-                        <web>java -jar ./target/cosmicweather-1.0.0-jar-with-dependencies.jar</web>
+                        <web>java -jar ./target/Weather-1.0.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>

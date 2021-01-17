@@ -18,6 +18,7 @@ public interface WeatherRepository extends PagingAndSortingRepository<Weather, L
 
     public List<Weather> findByType(String type);
 
-//    @Query(value = "select * from weather where day_number= dayNumber", nativeQuery = true)
-//    public List<Weather> findWeatherByDayNumber(@Param("day_Number") Integer dayNumber);
+    public List<Weather> findByPerimeter(double perimeter);
+
+    public Weather findFirstByOrderByPerimeterDesc();
 }

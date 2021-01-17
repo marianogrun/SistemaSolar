@@ -1,6 +1,7 @@
 package com.weather.web;
 
 import com.weather.entities.Weather;
+import com.weather.repositories.DroughtRepository;
 import com.weather.repositories.WeatherRepository;
 import com.weather.web.dto.WeatherDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class WeatherController {
     private WeatherService weatherService;
     @Autowired
     private WeatherRepository weatherRepository;
+    @Autowired
+    private DroughtRepository droughtRepository;
+
+    private final int periodAnalyzed=10;
 
     @GetMapping("/build-DB")
     public void start() {
@@ -34,6 +39,20 @@ public class WeatherController {
         }
 
         return new WeatherDTO(weather,day);
+    }
+
+    @GetMapping("/drought-periods")
+    public String droghtPeriods() {
+        long droughtPeriods= droughtRepository.count();
+
+        return "Períodos de sequía en 10 años: "+droughtPeriods* periodAnalyzed;
+    }
+
+    @GetMapping("/intensity-peaks")
+    public String intensityPeaks() {
+        int intensity_peaks=weatherService.intensityPeak() ;
+
+        return "Períodos de intensidad en 10 años: "+intensity_peaks* periodAnalyzed;
     }
 
 

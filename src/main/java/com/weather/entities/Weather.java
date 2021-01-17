@@ -14,8 +14,8 @@ public abstract class Weather {
 
 	protected Long id;
 	protected Integer day;
-
 	protected String type;
+	protected double perimeter;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY )
@@ -35,6 +35,10 @@ public abstract class Weather {
 		return day;
 	}
 
+	public double getPerimeter() {
+		return perimeter;
+	}
+
 	public void setDay(Integer day) {
 		this.day = day;
 	}
@@ -42,6 +46,8 @@ public abstract class Weather {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	public void setPerimeter(double perimeter){this.perimeter=perimeter;}
 
 	
 	

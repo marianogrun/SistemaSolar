@@ -10,7 +10,8 @@ public class OptimalConditions extends Weather {
 
     }
 
-    public OptimalConditions (int day) {
+    public OptimalConditions (int day, double perimeter) {
         this.day= day;
+        this.perimeter=perimeter;
     }
 }

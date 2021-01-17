@@ -30,7 +30,7 @@ public class WeatherServicesTest {
 
     @Test
     public void testCreateWeatherFindByDay(){
-        Drought drought=new Drought(0);
+        Drought drought=new Drought(0,1.0);
 
         drought.setType("Drought");
         weatherRepository.save(drought);
@@ -40,8 +40,8 @@ public class WeatherServicesTest {
 
     @Test
     public void testCreateWeatherFindByType(){
-        OptimalConditions optimalConditions=new OptimalConditions(17);
-        Rain rain=new Rain(25);
+        OptimalConditions optimalConditions=new OptimalConditions(17,1.0);
+        Rain rain=new Rain(25, 1.0);
 
         optimalConditions.setType("OPTIMAL_CONDITIONS");
         weatherRepository.save(optimalConditions);
