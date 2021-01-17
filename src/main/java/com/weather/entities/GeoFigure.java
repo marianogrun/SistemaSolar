@@ -41,9 +41,9 @@ public class GeoFigure {
     }
 
     public double perimeter(){
-        double ab= Math.sqrt(Math.pow(secondCoordinate.getX()-this.firstCoordinate.getX(), 2) + Math.pow(secondCoordinate.getY()-this.firstCoordinate.getY(), 2));
-        double bc= Math.sqrt(Math.pow(thirdCoordinate.getX()-this.secondCoordinate.getX(), 2) + Math.pow(thirdCoordinate.getY()-this.secondCoordinate.getY(), 2));
-        double ca= Math.sqrt(Math.pow(firstCoordinate.getX()-this.thirdCoordinate.getX(), 2) + Math.pow(firstCoordinate.getY()-this.thirdCoordinate.getY(), 2));
+        double ab= Math.sqrt(Math.pow(this.secondCoordinate.getX()-this.firstCoordinate.getX(), 2) + Math.pow(this.secondCoordinate.getY()-this.firstCoordinate.getY(), 2));
+        double bc= Math.sqrt(Math.pow(this.thirdCoordinate.getX()-this.secondCoordinate.getX(), 2) + Math.pow(this.thirdCoordinate.getY()-this.secondCoordinate.getY(), 2));
+        double ca= Math.sqrt(Math.pow(this.firstCoordinate.getX()-this.thirdCoordinate.getX(), 2) + Math.pow(this.firstCoordinate.getY()-this.thirdCoordinate.getY(), 2));
 
         return ab+bc+ca;
     }
