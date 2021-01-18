@@ -98,15 +98,6 @@ public class WeatherService {
             System.out.println(""+maxPerimeter);
             List<Weather> maxPerimeterWeathers= weatherRepository.findByPerimeter(maxPerimeter);
 //            System.out.println(""+maxPerimeterWeathers.get(0).getPerimeter()+""+maxPerimeterWeathers.size());
-            for(int i=0; i<maxPerimeterWeathers.size();i++){
-                Weather weather=maxPerimeterWeathers.get(i);
-//                IntensityPeak intensityPeak= new IntensityPeak(weather.getDay(),weather.getPerimeter());
-//                weatherRepository.save(intensityPeak);
-                weather.setType("INTENSITY_PEAK");
-                System.out.println(""+weather.getType());
-
-                weatherRepository.save(weather);
-            }
 
             return maxPerimeterWeathers.size();
 

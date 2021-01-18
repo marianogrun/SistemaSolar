@@ -18,4 +18,4 @@ Weather,com.weather.config,WeatherApplicationComponentScan,3,0,0,0,1,0,1,0,1,0
 Weather,com.weather.config,WeatherApplication,8,0,0,0,3,0,2,0,2,0
 Weather,com.weather.config,DataSourceConfig,24,0,0,0,7,0,2,0,2,0
 Weather,com.weather.config,WeatherApplicationComponentScan.ApplicationComponentScan,6,0,0,0,1,0,1,0,1,0
-Weather,com.weather.services,WeatherService,396,0,34,0,60,0,27,0,10,0
+Weather,com.weather.services,WeatherService,364,0,32,0,55,0,26,0,10,0

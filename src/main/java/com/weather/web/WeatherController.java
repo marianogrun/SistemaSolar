@@ -1,6 +1,5 @@
 package com.weather.web;
 
-import com.weather.entities.Rain;
 import com.weather.entities.Weather;
 import com.weather.repositories.DroughtRepository;
 import com.weather.repositories.WeatherRepository;
@@ -74,7 +73,6 @@ public class WeatherController {
 
         Long rainCounter=weatherService.getRainPeriods(rain_periods);
 
-//        return "Períodos de lluvia en 10 años: "+rainCounter* periodAnalyzed;
         return new RainPeriodsDTO(rainCounter,periodAnalyzed);
     }
 

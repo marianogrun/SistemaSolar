@@ -98,54 +98,45 @@ import java.util.List;
 <span class="nc" id="L98">            System.out.println(&quot;&quot;+maxPerimeter);</span>
 <span class="nc" id="L99">            List&lt;Weather&gt; maxPerimeterWeathers= weatherRepository.findByPerimeter(maxPerimeter);</span>
 //            System.out.println(&quot;&quot;+maxPerimeterWeathers.get(0).getPerimeter()+&quot;&quot;+maxPerimeterWeathers.size());
-<span class="nc bnc" id="L101" title="All 2 branches missed.">            for(int i=0; i&lt;maxPerimeterWeathers.size();i++){</span>
-<span class="nc" id="L102">                Weather weather=maxPerimeterWeathers.get(i);</span>
-//                IntensityPeak intensityPeak= new IntensityPeak(weather.getDay(),weather.getPerimeter());
-//                weatherRepository.save(intensityPeak);
-<span class="nc" id="L105">                weather.setType(&quot;INTENSITY_PEAK&quot;);</span>
-<span class="nc" id="L106">                System.out.println(&quot;&quot;+weather.getType());</span>
 
-<span class="nc" id="L108">                weatherRepository.save(weather);</span>
-            }
-
-<span class="nc" id="L111">            return maxPerimeterWeathers.size();</span>
+<span class="nc" id="L102">            return maxPerimeterWeathers.size();</span>
 
     }
 
     public Long getRainPeriods(List&lt;Weather&gt; weathers){
-<span class="nc" id="L116">        Long rainWeatherCounter=0L;</span>
-<span class="nc" id="L117">        boolean distinctRain=true;</span>
+<span class="nc" id="L107">        Long rainWeatherCounter=0L;</span>
+<span class="nc" id="L108">        boolean distinctRain=true;</span>
 
-<span class="nc bnc" id="L119" title="All 2 branches missed.">        for(int i=0;i&lt;weathers.size();i++){</span>
-<span class="nc bnc" id="L120" title="All 4 branches missed.">            if(weathers.get(i).getType().equals(&quot;RAIN&quot;)&amp;&amp;distinctRain==true){</span>
-<span class="nc" id="L121">                rainWeatherCounter++;</span>
-<span class="nc" id="L122">                distinctRain=false;</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        for(int i=0;i&lt;weathers.size();i++){</span>
+<span class="nc bnc" id="L111" title="All 4 branches missed.">            if(weathers.get(i).getType().equals(&quot;RAIN&quot;)&amp;&amp;distinctRain==true){</span>
+<span class="nc" id="L112">                rainWeatherCounter++;</span>
+<span class="nc" id="L113">                distinctRain=false;</span>
             }
 
-<span class="nc bnc" id="L125" title="All 2 branches missed.">            if(!weathers.get(i).getType().equals(&quot;RAIN&quot;)){</span>
-<span class="nc" id="L126">                distinctRain=true;</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">            if(!weathers.get(i).getType().equals(&quot;RAIN&quot;)){</span>
+<span class="nc" id="L117">                distinctRain=true;</span>
             }
         }
 
-<span class="nc" id="L130">        return rainWeatherCounter;</span>
+<span class="nc" id="L121">        return rainWeatherCounter;</span>
     }
 
     public int getOptimalPeriods(List&lt;Weather&gt; weathers){
-<span class="nc" id="L134">        int optimalWeatherCounter=0;</span>
-<span class="nc" id="L135">        boolean distinctOptimal=true;</span>
+<span class="nc" id="L125">        int optimalWeatherCounter=0;</span>
+<span class="nc" id="L126">        boolean distinctOptimal=true;</span>
 
-<span class="nc bnc" id="L137" title="All 2 branches missed.">        for(int i=0;i&lt;weathers.size();i++){</span>
-<span class="nc bnc" id="L138" title="All 4 branches missed.">            if(weathers.get(i).getType().equals(&quot;OPTIMAL_CONDITIONS&quot;)&amp;&amp;distinctOptimal==true){</span>
-<span class="nc" id="L139">                optimalWeatherCounter++;</span>
-<span class="nc" id="L140">                distinctOptimal=false;</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">        for(int i=0;i&lt;weathers.size();i++){</span>
+<span class="nc bnc" id="L129" title="All 4 branches missed.">            if(weathers.get(i).getType().equals(&quot;OPTIMAL_CONDITIONS&quot;)&amp;&amp;distinctOptimal==true){</span>
+<span class="nc" id="L130">                optimalWeatherCounter++;</span>
+<span class="nc" id="L131">                distinctOptimal=false;</span>
             }
 
-<span class="nc bnc" id="L143" title="All 2 branches missed.">            if(!weathers.get(i).getType().equals(&quot;OPTIMAL_CONDITIONS&quot;)){</span>
-<span class="nc" id="L144">                distinctOptimal=true;</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">            if(!weathers.get(i).getType().equals(&quot;OPTIMAL_CONDITIONS&quot;)){</span>
+<span class="nc" id="L135">                distinctOptimal=true;</span>
             }
         }
 
-<span class="nc" id="L148">        return optimalWeatherCounter;</span>
+<span class="nc" id="L139">        return optimalWeatherCounter;</span>
     }
 
 }

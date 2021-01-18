@@ -6,7 +6,6 @@ import com.weather.entities.Drought;
 import com.weather.entities.OptimalConditions;
 import com.weather.entities.Rain;
 import com.weather.entities.Weather;
-import com.weather.repositories.DroughtRepository;
 import com.weather.repositories.WeatherRepository;
 import com.weather.services.WeatherService;
 import org.junit.Test;
