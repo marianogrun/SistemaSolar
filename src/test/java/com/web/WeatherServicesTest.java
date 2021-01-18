@@ -29,7 +29,7 @@ public class WeatherServicesTest {
     private WeatherService weatherService;
 
     @Test
-    public void testCreateWeatherFindByDay(){
+    public void createWeatherFindByDayTest(){
         Drought drought=new Drought(0,1.0);
 
         drought.setType("Drought");
@@ -39,7 +39,7 @@ public class WeatherServicesTest {
     }
 
     @Test
-    public void testCreateWeatherFindByType(){
+    public void createWeatherFindByTypeTest(){
         OptimalConditions optimalConditions=new OptimalConditions(17,1.0);
         Rain rain=new Rain(25, 1.0);
 
