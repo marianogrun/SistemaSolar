@@ -6,10 +6,11 @@ import javax.persistence.*;
 @DiscriminatorValue("DROUGHT")
 public class Drought extends Weather {
 
-	private Drought(){
+	public Drought(){
 
 	}
-	public Drought (int day) {
+	public Drought (int day, double perimeter) {
 		this.day= day;
+		this.perimeter=perimeter;
 	}
 }

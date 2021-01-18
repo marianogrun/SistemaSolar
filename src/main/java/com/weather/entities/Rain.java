@@ -11,7 +11,8 @@ public class Rain extends Weather {
 
 	}
 
-	public Rain(Integer day) {
+	public Rain(Integer day, double perimeter) {
 		this.day= day;
+		this.perimeter=perimeter;
 	}
 }
