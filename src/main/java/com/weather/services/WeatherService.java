@@ -4,8 +4,6 @@ import com.weather.entities.*;
 import com.weather.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -29,7 +27,6 @@ public class WeatherService {
     Planet vulcano = new Planet ("Vulcano", 5, 1000, -1);
     private final int year=360;
 
-
     public String start(){
         try {
             for (int i = 0; i < year; i++) {
@@ -43,7 +40,6 @@ public class WeatherService {
 
     public Weather getBaseWeather(Integer day){
         List<Weather> weatherCandidates=weatherRepository.findByDay(day%360);
-
         return weatherCandidates.isEmpty()?null : weatherCandidates.get(0);
     }
 
@@ -68,7 +64,7 @@ public class WeatherService {
         }else if(containsCoordinate(sunCoordinate,geoFigure)){
             return new Rain(day, geoFigure.perimeter());
 
-        } else {
+        }else {
             return new Sunny(day, geoFigure.perimeter());
             }
 
@@ -79,7 +75,6 @@ public class WeatherService {
         GeoFigure geoFigure2=new GeoFigure(geoFigure.getFirstCoordinate(),coordinate,geoFigure.getThirdCoordinate());
         GeoFigure geoFigure3=new GeoFigure(geoFigure.getFirstCoordinate(),geoFigure.getSecondCoordinate(),coordinate);
 
-
         return geoFigure1.getArea()+geoFigure2.getArea()+geoFigure3.getArea()==geoFigure.getArea();
     }
 
@@ -88,19 +83,21 @@ public class WeatherService {
         GeoFigure geoFigure2=new GeoFigure(geoFigure.getFirstCoordinate(),coordinate,geoFigure.getThirdCoordinate());
         GeoFigure geoFigure3=new GeoFigure(geoFigure.getFirstCoordinate(),geoFigure.getSecondCoordinate(),coordinate);
 
-
         return geoFigure1.perimeter()+geoFigure2.perimeter()==geoFigure3.perimeter();
     }
 
 
     public int intensityPeak(){
             double maxPerimeter=weatherRepository.findFirstByOrderByPerimeterDesc().getPerimeter();
-            System.out.println(""+maxPerimeter);
+            System.out.println(maxPerimeter);
             List<Weather> maxPerimeterWeathers= weatherRepository.findByPerimeter(maxPerimeter);
-//            System.out.println(""+maxPerimeterWeathers.get(0).getPerimeter()+""+maxPerimeterWeathers.size());
 
+            for (int i=0; i<maxPerimeterWeathers.size();i++){
+                IntensityPeak intensityPeak=new IntensityPeak(maxPerimeterWeathers.get(i).getDay(),maxPerimeterWeathers.get(i).getPerimeter());
+                weatherRepository.deleteById(maxPerimeterWeathers.get(i).getId());
+                weatherRepository.save(intensityPeak);
+            }
             return maxPerimeterWeathers.size();
-
     }
 
     public Long getRainPeriods(List<Weather> weathers){
@@ -112,12 +109,10 @@ public class WeatherService {
                 rainWeatherCounter++;
                 distinctRain=false;
             }
-
             if(!weathers.get(i).getType().equals("RAIN")){
                 distinctRain=true;
             }
         }
-
         return rainWeatherCounter;
     }
 
@@ -130,12 +125,10 @@ public class WeatherService {
                 optimalWeatherCounter++;
                 distinctOptimal=false;
             }
-
             if(!weathers.get(i).getType().equals("OPTIMAL_CONDITIONS")){
                 distinctOptimal=true;
             }
         }
-
         return optimalWeatherCounter;
     }
 
