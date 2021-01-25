@@ -49,14 +49,14 @@ public class WeatherController {
 
     @GetMapping(path= "/periodos-sequia", produces= MediaType.APPLICATION_JSON_VALUE)
     public DroughtPeriodsDTO droghtPeriods() {
-        long droughtPeriods= droughtRepository.count();
+        long droughtPeriods=droughtRepository.count();
 
         return new DroughtPeriodsDTO(droughtPeriods,periodAnalyzed);
     }
 
     @GetMapping("/picos-intensidad")
     public String intensityPeaks() {
-        int intensity_peaks=weatherService.intensityPeak() ;
+        int intensity_peaks=weatherService.intensityPeak();
         double maxPerimeter=weatherRepository.findFirstByOrderByPerimeterDesc().getPerimeter();
         List<Weather> intensityPeakDays=weatherRepository.findByPerimeter(maxPerimeter);
         String response="Períodos de tormenta en 10 años: "+intensity_peaks* periodAnalyzed+". Días de pico en cada año: ";

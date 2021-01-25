@@ -24,8 +24,6 @@ public class WeatherServicesTest {
 
     @Autowired
     private WeatherRepository weatherRepository;
-    @Autowired
-    private WeatherService weatherService;
 
     @Test
     public void createWeatherFindByDayTest(){

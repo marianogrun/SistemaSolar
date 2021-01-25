@@ -1,7 +1,5 @@
 package com.weather.entities;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
-
 import javax.persistence.*;
 
 
