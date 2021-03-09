@@ -63,43 +63,77 @@ Se da al usuario la opción de iniciar la base a través de /build-DB
 
 
 
-Nube
+Nube 
 
 Service: https://intense-hamlet-68802.herokuapp.com/
 
 Base de datos: heroku
 
-API services:
+
+
+API services: 
+
+
 
 Iniciar base de datos
 
+
+
 https://intense-hamlet-68802.herokuapp.com/build-DB
+
+
 
 Consultar clima de un día en particular
 
+
+
 https://intense-hamlet-68802.herokuapp.com/clima?dia=566
+
+
 
 Cantidad de períodos de sequía
 
+
+
 https://intense-hamlet-68802.herokuapp.com/periodos-sequia
+
+
 
 Días de picos de intensidad
 
+
+
 https://intense-hamlet-68802.herokuapp.com/picos-intensidad
+
+
 
 Cantidad de períodos de lluvia
 
+
+
 https://intense-hamlet-68802.herokuapp.com/periodos-lluvia
+
+
 
 Cantidad de períodos de condiciones óptimas
 
+
+
 https://intense-hamlet-68802.herokuapp.com/condiciones-optimas
+
+
 
 Borrar campos de la base de datos
 
-https://intense-hamlet-68802.herokuapp.com/reboot
+
+
+https://intense-hamlet-68802.herokuapp.com/reboot 
+
+
 
 Tecnologías utilizadas
+
+
 
 -Java
 
@@ -109,13 +143,20 @@ Tecnologías utilizadas
 
 -Heroku
 
+
+
 Mejoras posibles a desarrollar:
 
-Incrementar el coverage del código. Por cuestiones de plazo de entrega no se agregaron más tests.
+
+
+Incrementar el coverage del código. Por cuestiones de plazo de entrega no se agregaron más tests. 
+
+
 
 Nuevos services que permitan al usuario :
 
-Buscar una cantidad de períodos de un clima en un año específico.
+Buscar una cantidad de períodos de un clima en un año específico. 
 
-Buscar una cantidad de períodos de un clima indicando el plazo deseado. Ejemplo: 20 ańos.
+Buscar una cantidad de períodos de un clima indicando el plazo deseado. Ejemplo: 20 ańos. 
+
 
