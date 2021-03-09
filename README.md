@@ -157,6 +157,6 @@ Nuevos services que permitan al usuario :
 
 Buscar una cantidad de períodos de un clima en un año específico. 
 
-Buscar una cantidad de períodos de un clima indicando el plazo deseado. Ejemplo: 20 ańos. 
+Buscar una cantidad de períodos de un clima indicando el plazo deseado. Ejemplo: 20 años. 
 
 
