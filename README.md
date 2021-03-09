@@ -65,7 +65,7 @@ Se da al usuario la opción de iniciar la base a través de /build-DB
 
 Nube 
 
-Service: http://weatherml.sa-east-1.elasticbeanstalk.com/
+Service: https://intense-hamlet-68802.herokuapp.com/
 
 Base de datos: heroku
 
@@ -79,7 +79,7 @@ Iniciar base de datos
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/build-DB
+https://intense-hamlet-68802.herokuapp.com/build-DB
 
 
 
@@ -87,7 +87,7 @@ Consultar clima de un día en particular
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/clima?dia=566
+https://intense-hamlet-68802.herokuapp.com/clima?dia=566
 
 
 
@@ -95,7 +95,7 @@ Cantidad de períodos de sequía
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/periodos-sequia
+https://intense-hamlet-68802.herokuapp.com/periodos-sequia
 
 
 
@@ -103,7 +103,7 @@ Días de picos de intensidad
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/picos-intensidad
+https://intense-hamlet-68802.herokuapp.com/picos-intensidad
 
 
 
@@ -111,7 +111,7 @@ Cantidad de períodos de lluvia
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/periodos-lluvia
+https://intense-hamlet-68802.herokuapp.com/periodos-lluvia
 
 
 
@@ -119,7 +119,7 @@ Cantidad de períodos de condiciones óptimas
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/condiciones-optimas
+https://intense-hamlet-68802.herokuapp.com/condiciones-optimas
 
 
 
@@ -127,7 +127,7 @@ Borrar campos de la base de datos
 
 
 
-http://weatherml.sa-east-1.elasticbeanstalk.com/reboot 
+https://intense-hamlet-68802.herokuapp.com/reboot 
 
 
 
@@ -140,8 +140,6 @@ Tecnologías utilizadas
 -Spring-boot
 
 -Data base H2
-
--AWS cloud
 
 -Heroku
 
